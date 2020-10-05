@@ -1,0 +1,15 @@
+version: "3"
+services:
+  parcel:
+    build:
+      context: "."
+      dockerfile: "Dockerfile"
+    image: "parcel-service"
+    container_name: "parcel-service"
+    command: ["npm", "run", "start"]
+    ports:
+      - "1111:1111"
+    working_dir: "/code"
+    environment:
+      - LOCAL=1
+    tty: true
